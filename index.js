@@ -71,17 +71,22 @@ console.log(arr);
 
 
 
+
+
+
+
+
+
 //Creat function for everything
 
 // getNames
 function getNames() {
-    for (arr.length = 0; arr.length < proffesion.length;) {
-        let nameForEmployee = prompt('Write name');
-        arr.push(nameForEmployee);
-        
-    }
-    console.log(arr);
+    do {
+    var names = prompt('Write name ');
+    arr.push(names);
+} while(arr.length < proffesion.length);
 }
+
 
 
 // creaetobj
@@ -136,18 +141,30 @@ function setSalary () {
     } 
 }
 
-
-for (let i = 0; i.length < 7; i++) {
-    obj[i].tellAboutYourSelf = function introduceYourSelf () {
-        return alert('Мене звуть ' + this.name + ' я працюю ' + this.position + ' моя зарплатня ' + this.salary);
+function setMethod(){
+    for (let i = 0; i < arr.length; i++) {
+        obj[i].tellAboutYourSelf = function (){
+            return alert('Мене звуть ' + obj[i].name + ' я працюю ' + obj[i].position + ' моя зарплатня ' + obj[i].salary);
+        }
     }
 }
 
-obj.showTeam  = function showAll() {
-    console.log(obj);
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     obj[i].tellAboutYourSelf = function introduceYourSelf () {
+//         return alert('Мене звуть ' + this.name + ' я працюю ' + this.position + ' моя зарплатня ' + this.salary);
+//     }
+// }
+
+obj.showTeam  = function() {
+    for (let i = 0; i < arr.length; i++) {
+        obj[i].tellAboutYourSelf();
+    }
 }
 
 getNames();
 createobj();
+setMethod();
 setSalary();
 obj.showTeam();
